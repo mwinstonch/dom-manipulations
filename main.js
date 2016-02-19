@@ -45,20 +45,20 @@ if (parseInt(circle.style.width) > 320) {
 }
 
 })
-
+var inactiveShowing = true
 document.querySelector("#remove button").addEventListener('click',function(){
   // TASK #5
 
 var container = document.querySelector("#userList") 
 
-var containerList = document.querySelectorAll("#userList li") 
+var containerList = container.querySelectorAll("li") 
 
 for (var i = 0; i < containerList.length; i++) {
 	if (containerList[i].className === "inactive") {
-	container.removeChild(containerList[i])
+	// container.removeChild(containerList[i])
+	list
 	}
 }
-
 
 })
 
@@ -107,6 +107,27 @@ document.querySelector("#pig-latin button").addEventListener('click',function(){
 
 })
 
+
 document.querySelector("#cycle-image button").addEventListener('click',function(){
   // TASK #8
+  var cityImgEl = document.querySelector("#city-img")
+
+  var url = cityImgEl.src
+
+  var cityArray = url.split("/")
+
+  var incNum = cityArray.pop()
+ 
+  var incNum = parseInt(incNum)
+  
+  
+  var newId = (incNum % 10) + 1
+
+  // incNum= (incNum % 10) + 1
+
+
+  cityArray.push(newId)
+
+  cityImgEl.src = cityArray.join("/")
+
 })
